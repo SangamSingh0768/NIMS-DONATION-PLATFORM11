@@ -329,32 +329,7 @@
                 >
             </div>
 
-            <div class="form-group">
-                <label>Section <span class="required">*</span></label>
-                <select id="section" required>
-                    <option value="">Select Section</option>
-                    <option>Section A</option>
-                    <option>Section B</option>
-                    <option>Section C</option>
-                    <option>Section D</option>
-                    <option>Section E</option>
-                    <option>Section F</option>
-                    <option>Section G</option>
-                    <option>Section H</option>
-                    <option>Section I</option>
-                    <option>Section J</option>
-                    <option>Section K</option>
-                    <option>Section L</option>
-                    <option>Section M</option>
-                    <option>Other</option>
-                </select>
-                <input
-                    type="text"
-                    id="sectionOther"
-                    class="other-input"
-                    placeholder="Enter section"
-                >
-            </div>
+            
 
             <div class="form-group">
                 <label>College Name <span class="required">*</span></label>
@@ -423,7 +398,7 @@
 
 <script>
 
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzdDM7WfDB28vpelVkk6HoeLGHEwJKBJvJKlEwbx-zX0Z-yN86c-J52B5GoodrglOUU/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzkIQU2JomsHJsLSmkZX-pSqwxmgerDAIF5M9t9w2ddo2Nguo5R2hAHk5q9rUB9i3SV/exec";
 
     function showOther(selectId, inputId) {
         const select = document.getElementById(selectId);
@@ -444,7 +419,6 @@
     showOther("course", "courseOther");
     showOther("year", "yearOther");
     showOther("semester", "semesterOther");
-    showOther("section", "sectionOther");
 
     document.getElementById("studentName").addEventListener("input", function () {
         this.value = this.value.replace(/[^A-Za-z ]/g, "");
@@ -470,10 +444,6 @@
             ? document.getElementById("semesterOther").value
             : document.getElementById("semester").value;
 
-        const section = document.getElementById("section").value === "Other"
-            ? document.getElementById("sectionOther").value
-            : document.getElementById("section").value;
-
         const contactNo = document.getElementById("contactNo").value;
 
         if (contactNo.length !== 10) {
@@ -487,7 +457,6 @@
             course: course,
             year: year,
             semester: semester,
-            section: section,
             collegeName: document.getElementById("collegeName").value,
             email: document.getElementById("email").value,
             contactNo: contactNo,
